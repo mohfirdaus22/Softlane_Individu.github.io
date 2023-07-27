@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        /* Gaya CSS lainnya seperti sebelumnya */
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Halaman Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        // Ambil referensi ke formulir login
+        const loginForm = document.getElementById('login-form');
+
+        // Tambahkan event listener untuk menghandle submit formulir
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Mencegah submit formulir secara default
+
+            // Di sini Anda dapat menambahkan logika untuk memeriksa login (dalam contoh ini, saya anggap login berhasil)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Ganti dengan logika login sesuai dengan aplikasi Anda
+            // Contoh logika sederhana: Jika username dan password tidak kosong, anggap login berhasil
+            const isLoggedIn = username !== '' && password !== '';
+
+            if (isLoggedIn) {
+                // Jika login berhasil, arahkan pengguna ke halaman index
+                window.location.href = 'index.html'; // Ganti 'index.html' dengan nama halaman index Anda
+            }
+        });
+    </script>
+</body>
+</html>
